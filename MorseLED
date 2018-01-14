@@ -1,0 +1,186 @@
+#define DOTLEN 200
+#define DASHLEN 600
+#define CODEDEL 200
+#define CHARDEL 400
+#define SPACEDEL 800
+int led_pin=2;
+char b[]={'T','H','I','S',' ','I','S',' ','B','H','U','L','O','C','H','A','N','S','A','T'};
+void dot()
+{
+  digitalWrite(led_pin, HIGH);
+  delay(DOTLEN);
+  digitalWrite(led_pin, LOW);
+  delay(CODEDEL);
+}
+void dash()
+{
+  digitalWrite(led_pin, HIGH);
+  delay(DASHLEN);
+  digitalWrite(led_pin, LOW);
+  delay(CODEDEL);
+}
+
+void morse(char a[], int n)
+{
+  int i;
+  for(i=0; i<n; i++)
+  {
+    if(a[i]=='A')
+    {
+      dot();dash();
+    }
+    else if(a[i]=='B')
+    {
+        dash();dot();dot();dot();
+    }
+  else if(a[i]=='C')
+  {dash();dot();dash();dot();
+  }
+  else if(a[i]=='D')
+  {dash();dot();dot();
+  }
+  else if(a[i]=='E')
+  {
+    dot();
+  }
+  else if(a[i]=='F')
+  {
+    dot();dot();dash();dot();
+  }
+  else if(a[i]=='G')
+  {dash();dash();dot();
+  }
+  else if(a[i]=='H')
+  {
+    dot();dot();dot();dot();
+  }
+  else if(a[i]=='I')
+  {
+    dot();dot();
+  }
+  else if(a[i]=='J')
+  {
+    dot();dash();dash();dash();
+  }
+  else if(a[i]=='K')
+  {
+    dash();dot();dash();
+  }
+  else if(a[i]=='L')
+  {
+    dot();dash();dot();dot();
+  }
+  else if(a[i]=='M')
+  {
+    dash();dash();
+  }
+  else if(a[i]=='N')
+  {
+    dash();dot();
+  }
+  else if(a[i]=='O')
+  {
+    dash();dash();dash();
+  }
+  else if(a[i]=='P')
+  {
+    dot();dash();dash();dot();
+  }
+  else if(a[i]=='Q')
+  {
+    dash();dash();dot();dash();
+  }
+  else if(a[i]=='R')
+  {
+    dot();dash();dot();
+  }
+  else if(a[i]=='S')
+  {
+    dot();dot();dot();
+  }
+  else if(a[i]=='T')
+  {
+    dash();
+  }
+  else if(a[i]=='U')
+  {
+    dot();dot();dash();
+  }
+  else if(a[i]=='V')
+  {
+    dot();dot();dot();dash();
+  }
+  else if(a[i]=='W')
+  {
+    dot();dash();dash();
+  }
+  else if(a[i]=='X')
+  {
+    dash();dot();dot();dash();
+  }
+  else if(a[i]=='Y')
+  {
+    dash();dot();dash();dash();
+  }
+  else if(a[i]=='Z')
+  {
+    dash();dash();dot();dot();
+  }
+  else if(a[i]=='0')
+  {
+    dash();dash();dash();dash();dash();
+  }
+  else if(a[i]=='1')
+  {
+    dot();dash();dash();dash();dash();
+  }
+  else if(a[i]=='2')
+  {
+    dot();dot();dash();dash();dash();
+  }
+  else if(a[i]=='3')
+  {
+    dot();dot();dot();dash();dash();
+  }
+  else if(a[i]=='4')
+  {
+    dot();dot();dot();dot();dash();
+  }
+  else if(a[i]=='5')
+  {
+    dot();dot();dot();dot();dot();
+  }
+  else if(a[i]=='6')
+  {
+    dash();dot();dot();dot();dot();
+  }
+  else if(a[i]=='7')
+  {
+    dash();dash();dot();dot();dot();
+  }
+  else if(a[i]=='8')
+  {
+    dash();dash();dash();dot();dot();
+  }
+  else if(a[i]=='9')
+  {
+    dash();dash();dash();dash();dot();
+  }
+  else if(a[i]==' ')
+  {
+    delay(SPACEDEL);
+  }
+  delay(CHARDEL);
+  }
+}
+
+void setup()
+{
+  pinMode(led_pin, OUTPUT);
+}
+
+void loop()
+{
+  morse(b,20);
+  delay(2000);
+}
