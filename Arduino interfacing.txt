@@ -1,0 +1,83 @@
+We have created a simple program that plays a song sent by another Arduino. It uses two Arduinos: a transmitter and a reciever connected to a buzzer.
+
+____________________________________________________________________________________________________________________
+
+Transmitter:
+
+//Song notes
+char mus[42]={'1','1','2','2','1','1','4','4','3',' ','1','1','2','2','1','1','5','5','4',' ','1','1','8','8','6','6','4','4','3','3','2','2','7','7','6','6','4','4','5','5','4','4'};
+void setup()
+{
+  Serial.begin(9600);
+}
+void loop()
+{
+  Serial.write(mus,42);
+  //Delay generated till the song is completed
+  delay(84400);
+}
+
+=====================================================================================================================
+
+Reciever:
+
+int i;
+char str[42];
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  Serial.readBytes(str,42);
+  //Code for generating tones from the buzzer
+  for(i=0; i<42; i++)
+  {
+    if(str[i]=='1')
+    {
+      tone(8, 261, 200);
+      delay(200);
+    }
+    else if(str[i]=='2')
+    {
+      tone(8, 294, 200);
+      delay(200);
+    }
+    else if(str[i]=='3')
+    {
+      tone(8, 330, 200);
+      delay(200);
+    }
+    else if(str[i]=='4')
+    {
+      tone(8, 350, 200);
+      delay(200);
+    }
+    else if(str[i]=='5')
+    {
+      tone(8, 392, 200);
+      delay(200);
+    }
+    else if(str[i]=='6')
+    {
+      tone(8, 440, 200);
+      delay(200);
+    }
+    else if(str[i]=='7')
+    {
+      tone(8, 466, 200);
+      delay(200);
+    }
+    else if(str[i]=='8')
+    {
+      tone(8, 523, 200);
+      delay(200);
+    }
+    else if(str[i]==' ')
+    {
+      delay(200);
+    }
+  }
+  delay(400);
+}
