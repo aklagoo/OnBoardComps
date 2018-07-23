@@ -1,0 +1,55 @@
+==============================================
+PAYLOAD:
+
+Digital: 			                         14
+Camera : 			                         2
+SD Card: 			                         4
+FM Transmitter Audio input:	           		1
+______________________________________________
+Remaining			                         7
+
+Analog:				                         6
+I2C:				                           2
+______________________________________________
+Remaining:			                       4
+==============================================
+MAIN COMP:
+
+Digital:			                         14
+Deployment:			                       1
+PAY_SWITCH:			                       1
+FM Transmitter Switch:		             1
+ADC_SWITCH:			                       1
+ADC_INTR:			                         1
+PAY_INTR:			                         1
+KILL_SWITCH:			                     1
+Main RX, TX:			2(RX)+1(TX)		 =  4
+RESET ACTIVATE:								1
+______________________________________________
+Remaining:			                       2
+
+Analog:				                         6
+Morse Transmitter*:		                 1
+Battery Voltage Meter:		             1
+I2C:				                           2
+______________________________________________
+Remaining:			                       2
+
+==============================================
+ADC COMP:
+
+Digital:			                         14
+Torquers:			                         6
+Sensor_switches                              4
+______________________________________________
+Remaining: 			                       4
+
+Analog:				                         6
+Temp. Sensors:			             1x2 = 2
+Accelerometer:			                   1
+Gyroscope:			                       1
+I2C:				                           2
+______________________________________________
+Remaining:			                       0
+
+==============================================
