@@ -1,2 +1,2 @@
 # OnBoardComps
-This repository hold the programs and sketechs of onboard computers and electronics
+This repository holds the programs and sketches of the OnBoard Computers subsystem.
